@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CCFrontTask1</title>
+    
+    <style>
+        p {
+            padding: 20px;
+            margin: 40px;
+            text-align: center;
+        }
+        
+        span {
+            border-bottom: 2px dotted red;
+            text-align: left;
+        }
+
+        [data-tooltip] {
+            position: relative;
+        }
+        
+        [data-tooltip]:before, [data-tooltip]:after {
+            position: absolute;
+            visibility: hidden;
+        }
+        
+        [data-tooltip]:hover:before, [data-tooltip]:hover:after,
+        [data-tooltip]:focus:before, [data-tooltip]:focus:after {
+            visibility: visible;
+            cursor: help;
+        }
+        
+        [data-tooltip]:before {
+            border: 8px solid transparent;
+            background: transparent;
+            content: "";
+        }
+        
+        [data-tooltip]:after {
+            padding: 8px;
+            width: 180px;
+            border-radius: 5px;
+            background-color: #ff5722;
+            color: #fff;
+            content: attr(data-tooltip);
+        }
+        
+        [data-tooltip]:before, [data-tooltip]:after {
+            bottom: 120%;
+            left: -180%;
+        }
+
+        [data-tooltip]:before {
+            margin-left: 200%;
+            margin-bottom: -16px;
+            border-top-color: #ff5722;
+        }
+
+    </style>
+    
+</head>
+<body>
+    
+    <div>
+        <p>This is an awesome <span data-tooltip="It's so cool">tooltip</span></p>
+    </div>
+
+</body>
+</html>
